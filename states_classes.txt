@@ -1,0 +1,18 @@
+part of 'counter_bloc.dart';
+
+@immutable
+abstract class CounterState {}
+
+class CounterInitial extends CounterState {}
+
+class CounterLoadingState extends CounterState {}
+
+class CounterLoadedState extends CounterState {
+  int counter;
+  CounterLoadedState(this.counter);
+}
+
+class CounterErrorState extends CounterState {
+  String message;
+  CounterErrorState(this.message);
+}
